@@ -25,7 +25,7 @@ module.exports = appInfo => {
 
   config.mysql = {
     client: {
-      host: 'localhost',
+      host: '39.108.73.149',
       port: '3306',
       user: 'root',
       password: '123456',
@@ -43,7 +43,9 @@ module.exports = appInfo => {
   };
 
   config.cors = {
-    origin: '*',
+    // origin: '*',
+    origin: 'http://127.0.0.1:3000',
+    credentials: true,
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
   };
 

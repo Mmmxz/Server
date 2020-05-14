@@ -15,10 +15,10 @@ class MainController extends Controller {
   async checkLogin() {
     const userName = this.ctx.request.body.userName;
     const password = this.ctx.request.body.password;
-    const sql = `SELECT userName 
+    const sql = `SELECT user.user_name as userName 
                 FROM user WHERE 
-                userName = ${userName} AND 
-                password = ${password}`;
+                user_name = '${userName}' AND 
+                password = '${password}'`;
     const result = await this.app.mysql.query(sql);
     if (result.length > 0) {
       // 登录成功，进行session缓存
